@@ -5,5 +5,6 @@ export const getLondonTime = async (): Promise<number> => {
     "http://worldtimeapi.org/api/timezone/Europe/London"
   ).then((response) => response.json());
   const time = moment(dateInfo.datetime);
-  return parseInt(time.format("HHMM"));
+  console.log({ dateInfo });
+  return parseInt(time.format("HHmm"));
 };
