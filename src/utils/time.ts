@@ -1,4 +1,4 @@
-import moment from "moment";
+import moment from "moment-timezone";
 
 export const getLondonTime = async (): Promise<number> => {
   const dateInfo = await fetch(
@@ -6,5 +6,5 @@ export const getLondonTime = async (): Promise<number> => {
   ).then((response) => response.json());
   const time = moment(dateInfo.datetime);
   console.log({ dateInfo });
-  return parseInt(time.format("HHmm"));
+  return parseInt(moment().tz("Europe/London").format("HHmm"));
 };
