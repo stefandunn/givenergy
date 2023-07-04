@@ -88,6 +88,16 @@ const handler = async (req: APIRequest, res: APIResponse<any>) => {
       return res.status(200).json({
         message:
           "Not required as scheduled charging and discharging is occurring, we do nothing",
+        chargeEnabled,
+        dischargeEnabled,
+        chargeStartTime,
+        chargeEndTime,
+        dischargeStartTime,
+        dischargeEndTime,
+        isWithinChargeTime,
+        isWithinDischargeTime,
+        isNotOnScheduledTime,
+        curTime,
       });
     }
 
