@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/cron/reset-to-dynamic",
+      "path": "/api/cron/reset-to-dynamic?key=867ituybf3gnj09h78g67rubtfigynyyh978tg6ri7bu",
       "schedule": "* * * * *"
     }
   ]

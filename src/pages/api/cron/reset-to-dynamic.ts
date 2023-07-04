@@ -20,6 +20,10 @@ const formatTimeToNumber = (value: any): number | undefined => {
 };
 
 const handler = async (req: APIRequest, res: APIResponse<any>) => {
+  const { key } = req.query;
+  if (key !== "867ituybf3gnj09h78g67rubtfigynyyh978tg6ri7bu") {
+    return res.status(405).json({ error: "Not allowed to access directly" });
+  }
   try {
     const {
       CHARGE_ENABLED_SETTING_ID,
