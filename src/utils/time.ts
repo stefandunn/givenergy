@@ -1,5 +1,5 @@
 import moment from "moment-timezone";
 
-export const getLondonTime = async (): Promise<number> => {
+export const getLondonTime = (): number => {
   return parseInt(moment().tz("Europe/London").format("HHmm"));
 };
