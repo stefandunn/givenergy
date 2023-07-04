@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { APIResponse, APIRequest } from "~/types/api.types";
 import { getSetting, setSetting } from "~/utils/api";
+import { getLondonTime } from "~/utils/time";
 
 const formatTimeToNumber = (value: any): number | undefined => {
   if (typeof value === "number") {
@@ -69,10 +70,7 @@ const handler = async (req: APIRequest, res: APIResponse<any>) => {
       });
     }
 
-    const currentDate = new Date();
-    const curTime = parseInt(
-      `${currentDate.getHours()}${currentDate.getMinutes()}`
-    );
+    const curTime = await getLondonTime();
     const isWithinChargeTime =
       chargeEnabled &&
       curTime > chargeStartTime - 1 &&
